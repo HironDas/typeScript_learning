@@ -5,5 +5,5 @@
  	}
  }
 
- var hello = new HelloWorld('Hello typeScript');
+ var hello = new HelloWorld('Hello sublime');
  console.log(hello.message);
