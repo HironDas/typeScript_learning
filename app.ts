@@ -1,10 +1,10 @@
 import {Category} from "./enums";
 import {Book, DamageLogger, Author, Librarian} from './interfaces';
-import {UniversityLibrarian, ReferenceItem} from "./classes";
+import {UniversityLibrarian, ReferenceItem, Encyclopedia} from "./classes";
 
 function GetAllBooks(): Book[] {
 	let books = [
-		{id: 1, title: 'Ulysses', author:'James Joyce' , available: true, category: Category.Fiction},
+		{ id:1, title: 'Ulysses', author:'James Joyce' , available: true, category: Category.Fiction},
 		{id: 2, title: 'A Farewell to Arms', author: 'Ernest Hemingway', available: false, category: Category.Fiction},
 		{id: 3, title: 'I Know Why the Caged Bird Sings', author: 'Maya Angelou', available: true, category: Category.Poetry},
 		{id: 4, title: 'Moby Dick', author: 'Herman Melville', available: true, category: Category.Fiction}
@@ -46,7 +46,7 @@ function GetBookTitleByCategory(categoryFilter: Category = Category.Fiction): Ar
 }
 
 function LogBookTitles(titles: string[]):void {
-	titles.forEach((title, index) => console.log(index+" - "+title);
+	titles.forEach((title, index) => console.log(index+" - "+title));
 }
 
 function GetBookByID(id: number): Book{
@@ -135,7 +135,12 @@ function PringBook(book: Book):void {
 // favoriteLibraian.name = "Hiron Das";
 // favoriteLibraian.assistCustomer("Suvash Das");
 
-let ref = new ReferenceItem();
-ref.title = 'Faces and Figures';
-ref.year = 2016;
-ref.printItem();
+// let ref: ReferenceItem = new ReferenceItem('update Facts and Figures', 2016);
+
+// ref.printItem();
+
+// ref.publisher = 'Random Data publisher';
+// console.log(ref.publisher);
+
+let refBook = new Encyclopedia("WorldPedia", 2019, 10);
+refBook.printItem();
