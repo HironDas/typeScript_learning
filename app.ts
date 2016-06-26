@@ -1,6 +1,6 @@
 import {Category} from "./enums";
 import {Book, DamageLogger, Author, Librarian} from './interfaces';
-import {UniversityLibrarian} from "./classes";
+import {UniversityLibrarian, ReferenceItem} from "./classes";
 
 function GetAllBooks(): Book[] {
 	let books = [
@@ -115,8 +115,8 @@ function PringBook(book: Book):void {
 // let myBooks: string[] = CheckoutBooks('Hiron', 1,3,4);
 // myBooks.forEach(title=> console.log(title););
 
-let hermansBooks = GetTitles('Herman Melville');
-hermansBooks.forEach(d => console.log(d));
+// let hermansBooks = GetTitles('Herman Melville');
+// hermansBooks.forEach(d => console.log(d));
 
 // let x:number;
 
@@ -130,7 +130,12 @@ hermansBooks.forEach(d => console.log(d));
 
 // LogBookTitles(fictionBooks);
 
-let favoriteLibraian: Librarian = new UniversityLibrarian();
+// let favoriteLibraian: Librarian = new UniversityLibrarian();
 
-favoriteLibraian.name = "Hiron Das";
-favoriteLibraian.assistCustomer("Suvash Das");
+// favoriteLibraian.name = "Hiron Das";
+// favoriteLibraian.assistCustomer("Suvash Das");
+
+let ref = new ReferenceItem();
+ref.title = 'Faces and Figures';
+ref.year = 2016;
+ref.printItem();
