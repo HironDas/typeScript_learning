@@ -1,4 +1,8 @@
-function GetAllBooks() {
+import {Category} from "./enums";
+import {Book, DamageLogger, Author, Librarian} from './interfaces';
+import {UniversityLibrarian} from "./classes";
+
+function GetAllBooks(): Book[] {
 	let books = [
 		{id: 1, title: 'Ulysses', author:'James Joyce' , available: true, category: Category.Fiction},
 		{id: 2, title: 'A Farewell to Arms', author: 'Ernest Hemingway', available: false, category: Category.Fiction},
@@ -26,7 +30,6 @@ function LogFirstAvailable(books):void {
 	console.log('First Available: '+ firstAvailable);
 }
 
-enum Category { BioGraphy, Poetry, Fiction, History, Children };
 
 function GetBookTitleByCategory(categoryFilter: Category = Category.Fiction): Array<string> {
 	console.log('Getting books in category: '+Category[categoryFilter]);
@@ -46,7 +49,7 @@ function LogBookTitles(titles: string[]):void {
 	titles.forEach((title, index) => console.log(index+" - "+title);
 }
 
-function GetBookByID(id: number): number[] {
+function GetBookByID(id: number): Book{
 	const allBooks = GetAllBooks();
 	return allBooks.filter(book => book.id === id)[0];
 }
@@ -104,6 +107,10 @@ function GetTitles(bookProperty: any): string[] {
 	return foundTitles;
 }
 
+function PringBook(book: Book):void {
+	console.log(book.title + " id " + book.author);
+}
+
 //********************************
 // let myBooks: string[] = CheckoutBooks('Hiron', 1,3,4);
 // myBooks.forEach(title=> console.log(title););
@@ -122,3 +129,8 @@ hermansBooks.forEach(d => console.log(d));
 // const fictionBooks = GetBookTitleByCategory();
 
 // LogBookTitles(fictionBooks);
+
+let favoriteLibraian: Librarian = new UniversityLibrarian();
+
+favoriteLibraian.name = "Hiron Das";
+favoriteLibraian.assistCustomer("Suvash Das");
