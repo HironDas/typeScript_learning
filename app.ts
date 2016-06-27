@@ -1,7 +1,15 @@
 import {Category} from "./enums";
 import {Book, DamageLogger, Author, Librarian} from './interfaces';
-import {UniversityLibrarian, ReferenceItem, Encyclopedia} from "./classes";
+import {UniversityLibrarian, ReferenceItem} from "./classes";
 
+import { CalculateLateFee as CalcFee, MaxBooksAllowed } from './lib/utilityFunction';
+
+import refBook from './encyclopedia';
+
+let reference = new refBook('Fact Book', 2013, 12);
+
+let fee = CalcFee(5);
+let max = MaxBooksAllowed(12);
 function GetAllBooks(): Book[] {
 	let books = [
 		{ id:1, title: 'Ulysses', author:'James Joyce' , available: true, category: Category.Fiction},
@@ -142,5 +150,5 @@ function PringBook(book: Book):void {
 // ref.publisher = 'Random Data publisher';
 // console.log(ref.publisher);
 
-let refBook = new Encyclopedia("WorldPedia", 2019, 10);
-refBook.printItem();
+/*let refBook = new Encyclopedia("WorldPedia", 2019, 10);
+refBook.printItem();*/
