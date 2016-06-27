@@ -1,10 +1,12 @@
 import {Category} from "./enums";
-import {Book, DamageLogger, Author, Librarian} from './interfaces';
+import {Book, DamageLogger, Author, Librarian, Magazine} from './interfaces';
 import {UniversityLibrarian, ReferenceItem} from "./classes";
 
-import { CalculateLateFee as CalcFee, MaxBooksAllowed } from './lib/utilityFunction';
+import { CalculateLateFee as CalcFee, MaxBooksAllowed, Purge } from './lib/utilityFunction';
 
 import refBook from './encyclopedia';
+
+import Shelf from "./self";
 
 let reference = new refBook('Fact Book', 2013, 12);
 
@@ -152,3 +154,37 @@ function PringBook(book: Book):void {
 
 /*let refBook = new Encyclopedia("WorldPedia", 2019, 10);
 refBook.printItem();*/
+
+
+let inventory: Array<Book> = [
+	{ id:1, title: 'Ulysses', author:'James Joyce' , available: true, category: Category.Fiction},
+	{id: 2, title: 'A Farewell to Arms', author: 'Ernest Hemingway', available: false, category: Category.Fiction},		
+	{id: 3, title: 'I Know Why the Caged Bird Sings', author: 'Maya Angelou', available: true, category: Category.Poetry},
+	{id: 4, title: 'Moby Dick', author: 'Herman Melville', available: true, category: Category.Fiction}
+];
+
+// let purgedBook: Array<Book> = Purge<Book>(inventory);
+
+// purgedBook.forEach(book => console.log(book));
+
+// let purgedNums: Array<number> = Purge<number>([1,2,3,4]);
+
+// console.log(purgedNums);
+
+let bookShelf: Shelf<Book> = new Shelf<Book>();
+
+inventory.forEach(book => bookShelf.add(book));
+
+let firstBook: Book = bookShelf.getFirst();
+
+let magazine: Array<Magazine> = [
+	{title: 'Programming Language Monthly', publisher: 'Code Nags'},
+	{title: 'Literary Fiction Quarterly', publisher: 'College Press'},
+	{title: 'Five Points', publisher: 'GSU'}
+];
+
+let magazineShelf: Shelf<Magazine> = new Shelf<Magazine>();
+
+magazine.forEach(mag => magazineShelf.add(mag));
+
+let firstMagazine: Magazine = magazineShelf.getFirst();
