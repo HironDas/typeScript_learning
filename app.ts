@@ -1,5 +1,3 @@
-/// <reference path="lodash.d.ts" />
-
 import {Category} from "./enums";
 import {Book, DamageLogger, Author, Librarian} from './interfaces';
 import {UniversityLibrarian, ReferenceItem} from "./classes";
