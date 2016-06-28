@@ -188,3 +188,11 @@ let magazineShelf: Shelf<Magazine> = new Shelf<Magazine>();
 magazine.forEach(mag => magazineShelf.add(mag));
 
 let firstMagazine: Magazine = magazineShelf.getFirst();
+
+/*let numberShelf: Shelf<number> = new Shelf<number>();
+[5,10,15].forEach(num => numberShelf.add(num));*/
+
+magazineShelf.printTitels();
+
+let softwareBook = bookShelf.find('Moby Dick');
+console.log(`${softwareBook.title} (${softwareBook.author})`);
