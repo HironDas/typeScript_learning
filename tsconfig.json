@@ -3,7 +3,8 @@
 		"target": "es5",
 		"outDir": "js",
 		"module": "commonjs",
-		"sourceMap": true
+		"sourceMap": true,
+		"watch": true
 	},
 	"files":[
 		"app.ts"

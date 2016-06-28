@@ -6,6 +6,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Hiron Das <hcdas.09@gmail.com>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HironDas/typeScript_learning.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/HironDas/typeScript_learning/issues"
+  },
+  "homepage": "https://github.com/HironDas/typeScript_learning",
+  "dependencies": {
+    "lodash": "^4.13.1"
+  }
 }
